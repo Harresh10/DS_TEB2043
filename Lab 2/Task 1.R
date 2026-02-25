@@ -1,8 +1,26 @@
-Numbers_List = list()
+print("--- Task 1: BMI Calculator ---")
 
-for (numbers in 1:20){
-  Numbers_List[[numbers]] <- numbers^2
-  
+weight <- as.numeric(readline(prompt = "Enter Weight (kg): "))
+height <- as.numeric(readline(prompt = "Enter Height (m): "))
+
+BMI <- weight / (height ^ 2)
+
+Underweight <- FALSE
+Normal      <- FALSE
+Overweight  <- FALSE
+Obese       <- FALSE
+
+if (BMI <= 18.4) {
+  Underweight = TRUE
+} else if (BMI >= 18.5 & BMI <= 24.9) {
+  Normal = TRUE
+} else if (BMI >= 25.0 & BMI <= 39.9) {
+  Overweight = TRUE
+} else {
+  Obese = TRUE
 }
 
-print(Numbers_List)
+print(paste("Underweight:", Underweight))
+print(paste("Normal:", Normal))
+print(paste("Overweight:", Overweight))
+print(paste("Obese:", Obese))
